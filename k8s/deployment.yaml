@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: olivetti-faces-app
+  labels:
+    app: olivetti-faces-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: olivetti-faces-app
+  template:
+    metadata:
+      labels:
+        app: olivetti-faces-app
+    spec:
+      containers:
+        - name: olivetti-faces-app
+          image: YOUR_DOCKERHUB_USERNAME/olivetti-faces-app:latest
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
