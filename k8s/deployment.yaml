@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: olivetti-faces-app
-          image: YOUR_DOCKERHUB_USERNAME/olivetti-faces-app:latest
+          image: vijaysaikrishnad/olivetti-faces-app:latest
           ports:
             - containerPort: 5000
           resources:
